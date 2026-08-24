@@ -1,0 +1,17 @@
+TASK: 05
+STATUS: COMPLETE
+TITLE: Local database abstraction
+COMMIT: f9d3b42
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- UI-independent Store interface for logical cloud file CRUD and pagination.
+- Deterministic MemoryStore test implementation.
+- Database documentation and unit coverage.
+TESTS:
+- CMake build PASS.
+- CTest PASS (3 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- MemoryStore is test-only; encrypted persistent storage is Task 06.
+NEXT:
+Task 06 — encrypted local database support.
