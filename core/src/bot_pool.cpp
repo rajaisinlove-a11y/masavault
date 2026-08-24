@@ -1,0 +1,2 @@
+#include "tgcloud/scheduler/bot_pool.hpp"
+namespace tgcloud::scheduler { int BotPool::acquire(){std::lock_guard l(mutex_);if(bots_.empty())return -1;for(size_t n=0;n<bots_.size();++n){auto i=(cursor_+n)%bots_.size();if(bots_[i].enabled){cursor_=(i+1)%bots_.size();++bots_[i].active;++bots_[i].assigned;return (int)i;}}return -1;} void BotPool::release(size_t i,bool ok){std::lock_guard l(mutex_);if(i>=bots_.size())return;if(bots_[i].active)--bots_[i].active;if(!ok)++bots_[i].failures;} std::vector<Bot> BotPool::snapshot()const{std::lock_guard l(mutex_);return bots_;} }
