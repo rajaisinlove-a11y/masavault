@@ -1,0 +1,3 @@
+#pragma once
+#include <string>
+namespace tgcloud::telegram { struct ApiResponse { long http_status{}; std::string body; }; class BotClient { std::string token_; std::string base_; public: explicit BotClient(std::string token,std::string base="https://api.telegram.org"):token_(std::move(token)),base_(std::move(base)){} ApiResponse get_me() const; ApiResponse get_chat(std::string chat_id) const; }; }
