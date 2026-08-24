@@ -1,0 +1,17 @@
+TASK: 06
+STATUS: COMPLETE
+TITLE: Encrypted local database support
+COMMIT: e4e31c7
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Authenticated TGDB1 local persistence envelope.
+- PBKDF2-HMAC-SHA256 and AES-256-GCM.
+- Logical cloud-file round-trip serialization.
+TESTS:
+- Build PASS; CTest PASS (4 tests).
+- Wrong password authentication failure PASS.
+- Build artifacts deleted.
+COMPATIBILITY:
+- Secure desktop persistence implemented; Android SQLCipher byte compatibility remains UNKNOWN and documented.
+NEXT:
+Task 07 — multi-bot pool and scheduler.
