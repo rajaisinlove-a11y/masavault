@@ -1,3 +1,5 @@
 add_executable(masavault-desktop main.cpp)
 target_link_libraries(masavault-desktop PRIVATE tgcloud_core)
 target_compile_features(masavault-desktop PRIVATE cxx_std_20)
+target_sources(masavault-desktop PRIVATE ui/transfer_center.cpp)
+target_include_directories(masavault-desktop PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/ui)
