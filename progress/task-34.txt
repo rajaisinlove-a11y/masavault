@@ -1,0 +1,18 @@
+TASK: 34
+STATUS: COMPLETE
+TITLE: Desktop file-browser/backend integration
+COMMIT: d30955a
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- UI-independent tgcloud URI/backend boundary.
+- File-browser entry model.
+TESTS:
+- CMake 3.31.6 build PASS.
+- CTest PASS (31 tests).
+- Build artifacts deleted.
+THUNAR FEASIBILITY:
+- FEASIBLE through a GVfs backend or FUSE mount process.
+- Thunar is not installed in this environment, so no live Thunar registration test was possible.
+- Telegram/core storage remains independent of the future mount adapter.
+NEXT:
+Task 35 — transfer center UI.
