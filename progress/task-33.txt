@@ -1,0 +1,16 @@
+TASK: 33
+STATUS: COMPLETE
+TITLE: Chunk-aware media streaming
+COMMIT: aa4cd66
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Byte-range to chunk-range planner.
+- Offset-aware partial chunk requests for seeking/buffering.
+TESTS:
+- CMake build PASS.
+- CTest PASS (30 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Telegram fetch adapter, disk cache, and media-player integration remain desktop/media work.
+NEXT:
+Task 34 — desktop file browser/backend integration, including Thunar feasibility.
