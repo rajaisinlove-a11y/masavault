@@ -1,0 +1,17 @@
+TASK: 10
+STATUS: COMPLETE
+TITLE: Direct file upload
+COMMIT: 105b722
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Multipart sendDocument using libcurl MIME API.
+- Disk-streamed upload with chat ID, file path, and optional caption.
+- 300-second upload timeout and response capture.
+TESTS:
+- CMake build PASS.
+- CTest PASS (6 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- API JSON parsing, retries, progress callbacks, and chunked uploads are later tasks.
+NEXT:
+Task 11 — compatible 4 MiB chunk engine.
