@@ -1,0 +1,18 @@
+TASK: 19
+STATUS: COMPLETE
+TITLE: Retry, rate-limit, and backoff system
+COMMIT: 82108a9
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Bounded retry decision policy.
+- Exponential backoff.
+- Retry-After override.
+- Permanent/error exhaustion suppression.
+TESTS:
+- CMake build PASS.
+- CTest PASS (15 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Policy is transport-independent; jitter and live Telegram response parsing remain integration work.
+NEXT:
+Task 20 — cloud_files compatibility layer.
