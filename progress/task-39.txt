@@ -1,0 +1,30 @@
+TASK: 39
+STATUS: COMPLETE
+TITLE: Settings / security / diagnostics UI model
+COMMIT: a2fb8a5
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+IMPLEMENTED:
+- SettingsModel: data dir, theme, max transfers, diagnostics flag. No tokens.
+- tgcloud::security::redact strips Telegram bot-token shapes from strings.
+- DiagnosticsModel redacts on insert and on export.
+- Required .link share warning string.
+- docs/settings.md
+
+TESTS:
+- settings_test PASS
+- Full CTest 36/36 PASS
+- Single-job Release build PASS
+- Build artifacts left in /tmp only
+
+COMPATIBILITY:
+- No Android wire format in this task.
+- Secret-free UI boundary matches Task 37 setup aliases.
+
+KNOWN PROBLEMS:
+- Still no painted Qt/GTK window.
+- OS credential store (libsecret/KWallet) is not wired yet.
+- Conversation file removed from HEAD; it may still exist in older Git history.
+
+NEXT:
+Task 40 — compatibility / integration / end-to-end test matrix.
