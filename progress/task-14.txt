@@ -1,0 +1,17 @@
+TASK: 14
+STATUS: COMPLETE
+TITLE: Upload queue and concurrency
+COMMIT: 5d31736
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Thread-based bounded TransferQueue.
+- FIFO submission and graceful draining shutdown.
+- Safe rejection after shutdown.
+TESTS:
+- CMake build PASS.
+- CTest PASS (10 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Persistent task transitions, cancellation, and per-bot queue integration are later transfer tasks.
+NEXT:
+Task 15 — download engine.
