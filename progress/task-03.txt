@@ -1,0 +1,21 @@
+TASK: 03
+STATUS: COMPLETE
+TITLE: Initialize Linux desktop project and build system
+COMMIT: a714453
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+IMPLEMENTED:
+- C++20/CMake project with UI-independent tgcloud_core library.
+- Bootstrap masavault-desktop executable.
+- CTest smoke test.
+- Reproducible build documentation.
+
+TESTS:
+- CMake configure PASS.
+- Release build PASS.
+- CTest PASS.
+- Executable smoke run PASS.
+- Build artifacts deleted after verification.
+
+NEXT:
+Task 04 — core domain models.
