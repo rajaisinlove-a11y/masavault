@@ -1,0 +1,28 @@
+TASK: 40
+STATUS: COMPLETE
+TITLE: Compatibility / integration / end-to-end test matrix
+COMMIT: 90f0a60
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+IMPLEMENTED:
+- FileManifest::from_json for the deterministic share JSON we emit.
+- pipeline_test: 4 MiB+ split, 5-bot assign, shuffled reconstruct, SHA-256, gap/missing reject.
+- compat_matrix_test: synthetic 2-chunk fixture, 252-chunk generate/parse, .link round-trip, sync chain, conflict, BKP1, cloud_files, streaming range.
+- live_telegram_test: SKIP unless TG_BOT_1 + TG_CHAT; live getMe/getChat PASS when set.
+- docs/TEST_MATRIX.md and fixture README. Honest NOT RUN rows for real apkforensic artifacts.
+
+TESTS:
+- CTest 39/39 PASS (offline live test skips).
+- Live getMe/getChat PASS in this environment (tokens not stored).
+
+COMPATIBILITY:
+- SYNTHETIC tests PASS.
+- Real Android .link / sync-node / backup / 252-chunk DB: NOT RUN (artifacts not vendored).
+- Sync GZIP-before-encrypt still unimplemented (SYNC1 wraps raw JSON).
+
+KNOWN PROBLEMS:
+- No painted desktop UI.
+- Exact Telegram caption / SQLCipher bytes still UNKNOWN.
+
+NEXT:
+Task 41 — packaging, documentation, release build and final handoff.
