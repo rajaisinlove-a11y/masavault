@@ -1,3 +1,5 @@
-add_library(tgcloud_core STATIC src/core.cpp src/memory_store.cpp)
+add_library(tgcloud_core STATIC src/core.cpp src/memory_store.cpp src/encrypted_store.cpp)
 target_include_directories(tgcloud_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(tgcloud_core PUBLIC cxx_std_20)
+find_package(OpenSSL REQUIRED)
+target_link_libraries(tgcloud_core PUBLIC OpenSSL::Crypto)
