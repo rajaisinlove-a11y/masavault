@@ -1,0 +1,17 @@
+TASK: 11
+STATUS: COMPLETE
+TITLE: Compatible 4 MiB chunk engine
+COMMIT: 35250c4
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Streaming disk splitter with exact 4 MiB compatibility size.
+- Final short chunk support and zero-based indexes.
+- Per-chunk SHA-256 and metadata callback.
+TESTS:
+- CMake build PASS.
+- CTest PASS (7 tests).
+- Build artifacts deleted.
+COMPATIBILITY:
+- Chunk size and index convention documented from forensic evidence; remote metadata encoding remains pending.
+NEXT:
+Task 12 — chunk manifest and metadata mapping.
