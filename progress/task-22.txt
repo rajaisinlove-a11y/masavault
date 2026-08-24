@@ -1,0 +1,17 @@
+TASK: 22
+STATUS: COMPLETE
+TITLE: Sync cryptography
+COMMIT: e2c110c
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- PBKDF2-HMAC-SHA256 100,000 derivation.
+- AES-256-GCM sync envelope with random salt/IV and authentication tag.
+- Wrong-password and round-trip tests.
+TESTS:
+- CMake build PASS.
+- CTest PASS (18 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Recovered GZIP-compressed JSON requirement and exact Android envelope encoding remain fixture-gated.
+NEXT:
+Task 23 — encrypted sync-node format.
