@@ -1,0 +1,2 @@
+#include "tgcloud/compat/cloud_files.hpp"
+namespace tgcloud::compat { model::Id CloudFiles::upsert(model::CloudFile f){auto rows=store_.list_files((size_t)-1,0);for(auto&r:rows)if(!f.file_uuid.empty()&&r.file_uuid==f.file_uuid){f.local_id=r.local_id;return store_.put_file(std::move(f));}return store_.put_file(std::move(f));}std::optional<model::CloudFile> CloudFiles::by_telegram_file(std::string id)const{for(auto&r:store_.list_files((size_t)-1,0))if(r.telegram_file_id==id)return r;return std::nullopt;}}
