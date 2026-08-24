@@ -1,0 +1,17 @@
+TASK: 08
+STATUS: COMPLETE
+TITLE: Telegram Bot API client
+COMMIT: 93e7b4d
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- libcurl transport boundary.
+- getMe and getChat Bot API operations.
+- 30-second request timeout and HTTP status capture.
+TESTS:
+- CMake build PASS.
+- CTest PASS (5 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Multipart transfer, JSON parsing, retries, and auth/channel policy remain later tasks.
+NEXT:
+Task 09 — Telegram authentication/channel validation.
