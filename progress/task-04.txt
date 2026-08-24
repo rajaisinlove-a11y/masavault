@@ -8,7 +8,7 @@ IMPLEMENTED:
 - TransferTask and state model transfer lifecycle.
 - SyncLog preserves operation, chain-relevant metadata, and conflict data.
 TESTS:
-- domain_test added; compile/test validation is part of next available build run.
+- domain_test added; domain_test PASS; existing core_smoke_test PASS.
 KNOWN PROBLEMS:
 - Serialization and persistence are intentionally deferred to Tasks 05 onward.
 NEXT:
