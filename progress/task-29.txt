@@ -14,3 +14,9 @@ KNOWN PROBLEMS:
 - Manifest schema parsing and Telegram object download integration remain to be wired.
 NEXT:
 Task 30 — compatible backup import/export.
+
+LIVE RECHECK (2026-08-24):
+- Five supplied bot credentials: getMe PASS for all five.
+- Storage channel -1003350037525: getChat PASS for all five.
+- No token values or response bodies recorded.
+- This validates credentials/channel reachability only; it does not prove upload, download, .link, backup, or sync interoperability.
