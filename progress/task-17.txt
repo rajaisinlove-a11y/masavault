@@ -1,0 +1,16 @@
+TASK: 17
+STATUS: COMPLETE
+TITLE: Transfer cancellation and error handling
+COMMIT: 4a0db83
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Atomic cancellation token.
+- Stable transfer error taxonomy and safe messages.
+TESTS:
+- CMake build PASS.
+- CTest PASS (13 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Existing libcurl calls do not yet receive progress callbacks for cancellation; integration belongs to transfer orchestration.
+NEXT:
+Task 18 — transfer progress engine.
