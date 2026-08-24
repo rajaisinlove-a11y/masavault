@@ -6,3 +6,4 @@ target_include_directories(masavault-desktop PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}
 target_sources(masavault-desktop PRIVATE ui/navigation.cpp)
 target_sources(masavault-desktop PRIVATE ui/setup.cpp)
 target_sources(masavault-desktop PRIVATE ui/actions.cpp)
+target_sources(masavault-desktop PRIVATE ui/settings.cpp)
