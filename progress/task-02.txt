@@ -1,0 +1,21 @@
+TASK: 02
+STATUS: COMPLETE
+TITLE: Compatibility specification and data-model matrix
+COMMIT: e7cfb9d
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+IMPLEMENTED:
+- Added docs/COMPATIBILITY_MATRIX.md with confirmed/observed/inferred/unknown status.
+- Added compatibility-oriented mappings for logical files, chunks, transfers, sync, gallery, backup, and sharing.
+- Added docs/reference/data-model.md and .agent_state/15_compatibility_matrix.md.
+- Removed obsolete forensic copies from production; canonical evidence is apkforensic.
+
+TESTS:
+- Documentation reviewed against the forensic report, SQL strings, inventories, and artifact findings.
+- Git status clean after commit.
+
+KNOWN PROBLEMS:
+- Exact wire metadata and migration semantics remain unknown until fixture/integration tests.
+
+NEXT:
+Task 03 — initialize Linux desktop build system.
