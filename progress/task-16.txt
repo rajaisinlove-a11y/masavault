@@ -1,0 +1,15 @@
+TASK: 16
+STATUS: COMPLETE
+TITLE: Chunked download reconstruction
+COMMIT: ce10af3
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Index-ordered disk reconstruction.
+- Gap/duplicate and missing-part rejection.
+- Bounded streaming concatenation.
+TESTS:
+- CMake build PASS.
+- CTest PASS (12 tests).
+- Build artifacts deleted.
+NEXT:
+Task 17 — transfer cancellation/error handling.
