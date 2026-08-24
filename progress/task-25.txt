@@ -1,0 +1,16 @@
+TASK: 25
+STATUS: COMPLETE
+TITLE: Conflict detection and merge
+COMMIT: a73bd9f
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Same-record divergent payload conflict detection.
+- Deterministic timestamp-based merge.
+TESTS:
+- CMake build PASS.
+- CTest PASS (21 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Android-specific conflict semantics remain unproven.
+NEXT:
+Task 26 — multi-device synchronization.
