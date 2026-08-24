@@ -1,0 +1,4 @@
+#include "tgcloud/migration/migrator.hpp"
+#include <sstream>
+#include <stdexcept>
+namespace tgcloud::migration {std::string export_file(const model::CloudFile&f){std::ostringstream o;o<<f.local_id<<'\n'<<f.file_uuid<<'\n'<<f.name<<'\n'<<f.mime_type<<'\n'<<f.size_bytes<<'\n'<<f.uploaded_at<<'\n'<<f.checksum<<'\n'<<f.telegram_message_id<<'\n'<<f.telegram_file_id<<'\n'<<f.telegram_file_unique_id<<'\n';return o.str();}model::CloudFile import_file(std::string_view s){std::istringstream i{std::string(s)};model::CloudFile f;std::string z;if(!std::getline(i,z))throw std::runtime_error("invalid migration");f.local_id=std::stoll(z);std::getline(i,f.file_uuid);std::getline(i,f.name);std::getline(i,f.mime_type);std::getline(i,z);f.size_bytes=std::stoull(z);std::getline(i,z);f.uploaded_at=std::stoll(z);std::getline(i,f.checksum);std::getline(i,z);f.telegram_message_id=std::stoll(z);std::getline(i,f.telegram_file_id);std::getline(i,f.telegram_file_unique_id);return f;}}
