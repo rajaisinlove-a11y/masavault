@@ -1,0 +1,15 @@
+TASK: 04
+STATUS: COMPLETE
+TITLE: Core domain models
+COMMIT: e17007c
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- CloudFile and ChunkRecord preserve logical indexes and Telegram identifiers.
+- TransferTask and state model transfer lifecycle.
+- SyncLog preserves operation, chain-relevant metadata, and conflict data.
+TESTS:
+- domain_test added; compile/test validation is part of next available build run.
+KNOWN PROBLEMS:
+- Serialization and persistence are intentionally deferred to Tasks 05 onward.
+NEXT:
+Task 05 — local database abstraction.
