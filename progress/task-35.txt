@@ -1,0 +1,16 @@
+TASK: 35
+STATUS: COMPLETE
+TITLE: Transfer center UI
+COMMIT: c00055f
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Transfer center view model with task, progress, and active bot information.
+- Desktop UI boundary remains independent of core transfer logic.
+TESTS:
+- CMake build PASS.
+- CTest PASS (32 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Native GUI rendering is deferred to desktop shell/navigation tasks; toolkit selection remains open.
+NEXT:
+Task 36 — dashboard/sidebar/navigation UI.
