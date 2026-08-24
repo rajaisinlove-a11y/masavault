@@ -1,0 +1,19 @@
+TASK: 06
+STATUS: BLOCKED
+TITLE: Encrypted local database support
+
+CURRENT STATE:
+Task 06 was not marked complete. A prototype was rejected because it created only an authenticated empty envelope and did not serialize/restore domain records. No incomplete crypto implementation was retained.
+
+BLOCKER:
+The environment has OpenSSL headers available but no verified SQLCipher/SQLite development stack. Implementing a genuine encrypted persistent store requires either a supported SQLite/SQLCipher dependency or a complete, tested streaming serialization format; inventing one here would violate compatibility-first and no-fake rules.
+
+ATTEMPTED:
+- OpenSSL capability checked.
+- Prototype build setup was attempted, then removed because payload persistence was incomplete.
+
+RECOVERY:
+Provide/install SQLite/SQLCipher development libraries, or approve a narrowly scoped local envelope format after its serialization schema is specified and tested. Then implement round-trip persistence, wrong-password authentication failure, corruption detection, and tests before completion.
+
+NEXT:
+Task 06 remains the next incomplete task. Do not begin Task 07.
