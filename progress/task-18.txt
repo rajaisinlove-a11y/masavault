@@ -1,0 +1,17 @@
+TASK: 18
+STATUS: COMPLETE
+TITLE: Transfer progress engine
+COMMIT: 5b313e2
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Thread-safe completed/total byte tracking.
+- Monotonic-clock throughput and ETA calculations.
+- Snapshot API for UI polling.
+TESTS:
+- CMake build PASS.
+- CTest PASS (14 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Transfer callbacks still need wiring into network operations.
+NEXT:
+Task 19 — retry, rate-limit, and backoff system.
