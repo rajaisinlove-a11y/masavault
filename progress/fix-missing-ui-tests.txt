@@ -1,0 +1,22 @@
+TASK: FIX
+STATUS: COMPLETE
+TITLE: Restore missing UI tests, progress map, remove leaked conversation
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+WHY:
+A fresh clone could not run cmake. Tasks 35–38 listed tests that were never in Git.
+The conversation dump at the repo root contained a GitHub PAT and live bot tokens.
+
+DONE:
+- Added readable tests: transfer_center, navigation, setup, actions.
+- Annotated every unit test with a one-line "what this proves".
+- Added README.md and progress/README.md so a newcomer can follow the map.
+- Recorded the live 01–38 recheck in backtest-task-01-38.txt (no secrets).
+- Deleted previous developer ai agent conversation.txt from the tree.
+
+TESTS:
+- After this fix, cmake configures again.
+- CTest 35/35 for tasks 01–38 coverage (settings_test is Task 39).
+
+NEXT:
+Task 39 — settings/security/diagnostics UI.

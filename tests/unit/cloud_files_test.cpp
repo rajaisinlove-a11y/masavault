@@ -1,3 +1,5 @@
+// Task 20 — cloud_files adapter: upsert by UUID, look up by Telegram file id.
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include "tgcloud/compat/cloud_files.hpp"
 #include "tgcloud/database/memory_store.hpp"

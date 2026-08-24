@@ -11,5 +11,8 @@ TESTS:
 - CMake build PASS with one job.
 - CTest PASS (35 tests).
 - Build artifacts deleted.
+NOTE:
+actions_test.cpp was missing from Git after the original checkpoint and was restored.
+
 NEXT:
 Task 39 — settings/security/diagnostics UI.

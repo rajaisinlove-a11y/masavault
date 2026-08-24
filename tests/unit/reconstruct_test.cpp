@@ -1,3 +1,5 @@
+// Task 16 — stitch part files in logical index order; missing/duplicate indexes fail.
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include <fstream>
 #include "tgcloud/transfer/reconstruct.hpp"

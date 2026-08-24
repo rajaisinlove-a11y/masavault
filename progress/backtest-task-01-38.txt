@@ -1,0 +1,55 @@
+TASK: LIVE RECHECK 01-38
+STATUS: CORE PASS / TREE NOT CLEAN
+DATE: 2026-08-24
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+COMMIT_AT_RECHECK: 58a786f (conversation file added on top of task-38 checkpoint bba940f)
+
+BOTS:
+- Five tokens were found in previous developer ai agent conversation.txt (user said four).
+- Tokens were used only via process environment. Not written to this file, tests, or Git.
+- Live getMe + getChat against the configured storage channel:
+  Bot 1 @Cloudstorage2471119358bot PASS/PASS
+  Bot 2 @Cloudstorage247111935bot PASS/PASS
+  Bot 3 @Cloudstorage24711193bot PASS/PASS
+  Bot 4 @Cloudstorage2471119bot PASS/PASS
+  Bot 5 @Cloudstorage247111bot PASS/PASS
+
+UNIT / BUILD:
+- Vanilla cmake configure FAILS: tests/CMakeLists.txt references four missing sources:
+    tests/unit/transfer_center_test.cpp
+    tests/unit/navigation_test.cpp
+    tests/unit/setup_test.cpp
+    tests/unit/actions_test.cpp
+- After isolating those four missing files, Release build PASS (single job).
+- CTest: 31/31 PASS (tasks 01-34 coverage).
+- Desktop binary prints "TG Cloud Desktop" and exits 0. No GUI toolkit.
+
+LIVE CORE PIPELINE (tgcloud_core + real Bot API):
+- 4,206,649-byte payload (4 MiB + 12345) split into 2 compatible chunks PASS
+- BotPool assignment used bots 1 and 2 PASS
+- sendDocument both chunks PASS (file_id present)
+- getFile + disk download both chunks PASS
+- reconstruct by logical index PASS
+- SHA-256 match PASS
+- Direct small sendDocument PASS
+- BKP1 encrypt/decrypt round-trip PASS
+- LIVE_SUMMARY fails=0
+
+TASK MAP:
+01-34  unit present and PASS; live Telegram exercised for 08-16/30
+35-38  CMake claims tests; sources were never committed. UI is view-models only.
+39     not started (waiting for user "do it")
+
+KNOWN PROBLEMS:
+- Public conversation file contains a GitHub PAT and live bot tokens. Remove that file from Git history after this session.
+- No Qt/GTK shell. Tasks 35-38 are not a desktop UI.
+- OpenSSL 3 deprecation warnings in chunker SHA-256 helpers.
+- Forensic compatibility artifacts (real .link / sync-node / backup / 252-chunk) were not available here (apkforensic private). Those rows stay EVIDENCE_ONLY.
+- Tree as committed cannot configure until the four missing test files are added or CMakeLists is fixed.
+
+NEXT:
+Wait for user to say proceed. Then Task 39 — settings/security/diagnostics UI.
+Also restore a buildable tree (add missing tests or drop them from CMakeLists) before claiming 35 tests.
+
+WORKSPACE:
+masavault ~1.1 MB. Build lived in /tmp and is disposable.

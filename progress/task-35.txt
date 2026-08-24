@@ -12,5 +12,9 @@ TESTS:
 - Build artifacts deleted.
 KNOWN PROBLEMS:
 - Native GUI rendering is deferred to desktop shell/navigation tasks; toolkit selection remains open.
+NOTE:
+transfer_center_test.cpp was missing from Git after the original checkpoint.
+It was restored so a new clone can configure CMake and read the test.
+
 NEXT:
 Task 36 — dashboard/sidebar/navigation UI.

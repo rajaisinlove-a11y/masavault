@@ -1,3 +1,5 @@
+// Task 06 — TGDB1 encrypted file store: write with a password, reload, reject a wrong password.
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include <filesystem>
 #include "tgcloud/database/encrypted_store.hpp"

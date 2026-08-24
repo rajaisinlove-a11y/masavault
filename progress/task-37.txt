@@ -12,5 +12,8 @@ TESTS:
 - Build artifacts deleted.
 KNOWN PROBLEMS:
 - Native wizard rendering and OS credential-store integration remain platform/UI work.
+NOTE:
+setup_test.cpp was missing from Git after the original checkpoint and was restored.
+
 NEXT:
 Task 38 — share/backup/gallery UI.

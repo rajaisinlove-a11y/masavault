@@ -1,3 +1,5 @@
+// Task 28 — write single-file and batch encrypted .link files to disk.
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include <fstream>
 #include "tgcloud/manifest/link_generator.hpp"

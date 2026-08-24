@@ -1,3 +1,5 @@
+// Task 29 — read a .link from disk and decrypt to JSON (no sender database).
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include <fstream>
 #include "tgcloud/manifest/link_import.hpp"

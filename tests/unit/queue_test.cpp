@@ -1,3 +1,5 @@
+// Task 14 — bounded worker queue runs jobs and shuts down cleanly.
+// Read progress/README.md if you are new to this repo.
 #include <atomic>
 #include <cassert>
 #include <thread>

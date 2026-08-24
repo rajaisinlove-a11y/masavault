@@ -1,3 +1,5 @@
+// Task 11 — 4 MiB-compatible splitter: tiny file becomes one hashed chunk on disk (not in RAM).
+// Read progress/README.md if you are new to this repo.
 #include <cassert>
 #include <fstream>
 #include "tgcloud/chunking/chunker.hpp"
