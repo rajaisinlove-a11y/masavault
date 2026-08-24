@@ -1,0 +1,26 @@
+TASK: 01
+STATUS: COMPLETE
+TITLE: Repository archaeology and architecture index
+COMMIT: PENDING_CHECKPOINT_COMMIT
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+REFERENCE: https://github.com/rajaisinlove-a11y/apkforensic
+
+IMPLEMENTED:
+- Separated the existing forensic material into the read-only apkforensic repository.
+- Removed forensic binaries/reports from the production working tree.
+- Added docs/architecture.md with confirmed, observed, inferred, and unknown evidence labels.
+- Added .agent_state/architecture_index.md and 00_repo_map.md.
+
+TESTS:
+- Repository tree and all reference files inspected.
+- Workspace size checked; production source remains small.
+
+COMPATIBILITY:
+- No application functionality implemented. Baseline preserves the known Telegram, chunk, database, sync, crypto, sharing, backup, gallery, and streaming concepts.
+
+KNOWN PROBLEMS:
+- Exact wire metadata, migration details, and some runtime semantics remain UNKNOWN.
+- GitHub PAT supplied in chat should be revoked and replaced; it is not stored in repository files.
+
+NEXT:
+Task 02 — compatibility specification and data-model matrix.
