@@ -3,7 +3,7 @@
 ## Dependencies (Debian / Ubuntu)
 
 ```sh
-sudo apt-get install -y cmake g++ libssl-dev libcurl4-openssl-dev
+sudo apt-get install -y cmake g++ libssl-dev libcurl4-openssl-dev zlib1g-dev
 ```
 
 ## Build, test, install
