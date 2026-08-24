@@ -1,0 +1,18 @@
+TASK: 30
+STATUS: COMPLETE
+TITLE: Compatible backup import/export
+COMMIT: 5b05129
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- BKP1 backup encryption/decryption boundary.
+- SHA-256(password UTF-8 plus salt) key derivation.
+- AES-256-CBC and PKCS#7 padding.
+- Wrong-password and round-trip tests.
+TESTS:
+- CMake build PASS.
+- CTest PASS (27 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- ZIP/container manifest parsing and Android database/config restoration remain Task 31.
+NEXT:
+Task 31 — Android/desktop database migration compatibility.
