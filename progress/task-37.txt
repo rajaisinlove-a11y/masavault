@@ -1,0 +1,16 @@
+TASK: 37
+STATUS: COMPLETE
+TITLE: Setup wizard/bot/sync configuration UI
+COMMIT: 508b809
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Setup model separating storage channel, sync channel, device ID, and bot aliases.
+- Secret-free configuration boundary.
+TESTS:
+- CMake build PASS with single-job resource-safe build.
+- CTest PASS (34 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Native wizard rendering and OS credential-store integration remain platform/UI work.
+NEXT:
+Task 38 — share/backup/gallery UI.
