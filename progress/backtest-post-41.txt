@@ -1,0 +1,26 @@
+TASK: POST-41 BACKTEST + DESKTOP SHELL
+STATUS: COMPLETE
+DATE: 2026-08-24
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+
+OFFLINE:
+- CTest 40/40 PASS (including full_backtest without env).
+
+FIXES:
+- Encrypted TGDB1 store now persists chunk records (was dropping them).
+- Sync encrypt now GZIP-compresses JSON (Android report). Decrypt still accepts old raw SYNC1.
+
+LIVE (tokens only in process env, redacted in diagnostics):
+- 5/5 bots getMe+getChat PASS
+- live sendDocument PASS
+- .link generate/import PASS
+- BKP1 PASS
+- Desktop /api/setup + /api/upload + diagnostics redaction PASS
+
+DESKTOP:
+- masavault-desktop listens on 0.0.0.0:8787
+- My Files / Transfers / Setup / Share / Diagnostics / Settings
+- Transport stays in Session, not in HTML
+
+NEXT:
+Native Qt/GTK chrome can replace the HTML shell using the same Session/models.

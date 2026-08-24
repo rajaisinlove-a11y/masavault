@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TG Cloud Desktop</title>
+<style>
+  :root { --bg:#0f1419; --panel:#171e27; --line:#243041; --text:#e8eef6; --muted:#8b9bb0; --acc:#4ea1ff; --ok:#3dd68c; --bad:#ff6b6b; --side:232px; }
+  * { box-sizing:border-box; }
+  html,body { margin:0; height:100%; background:var(--bg); color:var(--text); font:14px/1.45 "Segoe UI",system-ui,sans-serif; }
+  .app { display:grid; grid-template-columns:var(--side) 1fr; height:100%; }
+  aside { background:var(--panel); border-right:1px solid var(--line); padding:20px 12px; display:flex; flex-direction:column; gap:6px; }
+  .brand { font-weight:700; letter-spacing:.02em; padding:4px 12px 16px; }
+  .brand small { display:block; color:var(--muted); font-weight:500; margin-top:2px; }
+  aside button { text-align:left; background:transparent; border:0; color:var(--text); padding:9px 12px; border-radius:8px; cursor:pointer; }
+  aside button:hover, aside button.on { background:#243041; }
+  main { display:flex; flex-direction:column; min-width:0; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:16px 24px; border-bottom:1px solid var(--line); }
+  header h1 { font-size:18px; margin:0; }
+  .stats { color:var(--muted); }
+  .body { padding:20px 24px; overflow:auto; }
+  .card { background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:16px; margin-bottom:16px; }
+  label { display:block; color:var(--muted); margin:8px 0 4px; }
+  input, textarea { width:100%; background:#0f1419; color:var(--text); border:1px solid var(--line); border-radius:8px; padding:8px 10px; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  button.acc { background:var(--acc); color:#041018; border:0; border-radius:8px; padding:8px 14px; font-weight:600; cursor:pointer; }
+  table { width:100%; border-collapse:collapse; }
+  th,td { text-align:left; padding:8px 6px; border-bottom:1px solid var(--line); }
+  th { color:var(--muted); font-weight:600; }
+  .ok { color:var(--ok); } .bad { color:var(--bad); }
+  pre { white-space:pre-wrap; color:var(--muted); font-size:12px; }
+  .hidden { display:none; }
+  .drop { border:1px dashed var(--line); border-radius:12px; padding:22px; text-align:center; color:var(--muted); }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside>
+    <div class="brand">TG Cloud Desktop<small>Telegram object store</small></div>
+    <button class="on" data-page="files" onclick="show('files',this)">My Files</button>
+    <button data-page="transfers" onclick="show('transfers',this)">Transfers</button>
+    <button data-page="setup" onclick="show('setup',this)">Setup</button>
+    <button data-page="share" onclick="show('share',this)">Share</button>
+    <button data-page="diagnostics" onclick="show('diagnostics',this)">Diagnostics</button>
+    <button data-page="settings" onclick="show('settings',this)">Settings</button>
+  </aside>
+  <main>
+    <header>
+      <h1 id="title">My Files</h1>
+      <div class="stats" id="stats">loading…</div>
+    </header>
+    <div class="body">
+      <section id="files">
+        <div class="card drop" id="drop">Drop a file here or <input id="file" type="file"></div>
+        <div class="card">
+          <table>
+            <thead><tr><th></th><th>Name</th><th>Size</th><th>Chunks</th></tr></thead>
+            <tbody id="file-rows"><tr><td colspan="4">No files yet. Configure bots, then upload.</td></tr></tbody>
+          </table>
+        </div>
+      </section>
+      <section id="transfers" class="hidden">
+        <div class="card"><table><thead><tr><th>File</th><th>Progress</th></tr></thead><tbody id="tx-rows"></tbody></table></div>
+      </section>
+      <section id="setup" class="hidden">
+        <div class="card">
+          <p>Storage channel and bot tokens stay in memory. They are redacted in diagnostics.</p>
+          <label>Storage channel ID</label>
+          <input id="channel" placeholder="-100…">
+          <label>Bot tokens (one per line, up to 5)</label>
+          <textarea id="tokens" rows="5" placeholder="123456:AA…"></textarea>
+          <div class="row" style="margin-top:12px"><button class="acc" onclick="saveSetup()">Test and save</button><span id="setup-msg"></span></div>
+        </div>
+      </section>
+      <section id="share" class="hidden">
+        <div class="card">
+          <p>Select files in My Files, then export a compatible <code>.link</code>.</p>
+          <label>Share password</label>
+          <input id="share-pw" type="password" value="share">
+          <button class="acc" onclick="doShare()">Create .link</button>
+          <p id="share-msg"></p>
+        </div>
+      </section>
+      <section id="diagnostics" class="hidden">
+        <div class="card"><pre id="diag">No lines yet.</pre></div>
+      </section>
+      <section id="settings" class="hidden">
+        <div class="card">
+          <p>Preferences are secret-free. Tokens never belong here.</p>
+          <p>Theme: dark · Max transfers: 3 · Diagnostics: on</p>
+          <p class="stats">Next: Qt/GTK native chrome can bind the same models. This shell is the working Linux UI.</p>
+        </div>
+      </section>
+    </div>
+  </main>
+</div>
+<script>
+const titles = {files:'My Files',transfers:'Transfers',setup:'Setup',share:'Share',diagnostics:'Diagnostics',settings:'Settings'};
+function show(id, btn){
+  document.querySelectorAll('.body section').forEach(s=>s.classList.add('hidden'));
+  document.getElementById(id).classList.remove('hidden');
+  document.getElementById('title').textContent = titles[id];
+  document.querySelectorAll('aside button').forEach(b=>b.classList.remove('on'));
+  if(btn) btn.classList.add('on');
+  if(id==='diagnostics') refreshDiag();
+  if(id==='transfers') refreshTx();
+}
+async function refresh(){
+  const s = await (await fetch('/api/status')).json();
+  document.getElementById('stats').textContent =
+    (s.ready?'Ready':'Setup needed')+' · '+s.file_count+' files · '+s.logical_bytes+' bytes · '+s.bots_configured+' bots';
+  const files = await (await fetch('/api/files')).json();
+  const tb = document.getElementById('file-rows');
+  if(!files.length){ tb.innerHTML = '<tr><td colspan="4">No files yet. Configure bots, then upload.</td></tr>'; return; }
+  tb.innerHTML = files.map(f=>`<tr><td><input type="checkbox" class="pick" value="${f.id}"></td><td>${f.name}</td><td>${f.size}</td><td>${f.chunks}</td></tr>`).join('');
+}
+async function refreshTx(){
+  const rows = await (await fetch('/api/transfers')).json();
+  document.getElementById('tx-rows').innerHTML = rows.map(r=>`<tr><td>${r.name}</td><td>${r.completed}/${r.total}</td></tr>`).join('') || '<tr><td colspan="2">Idle</td></tr>';
+}
+async function refreshDiag(){
+  document.getElementById('diag').textContent = await (await fetch('/api/diagnostics')).text();
+}
+async function saveSetup(){
+  const channel = document.getElementById('channel').value.trim();
+  const lines = document.getElementById('tokens').value.split(/\n/).map(s=>s.trim()).filter(Boolean);
+  const body = new URLSearchParams({channel});
+  lines.forEach((t,i)=>body.set('bot'+(i+1), t));
+  const r = await (await fetch('/api/setup',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body})).json();
+  document.getElementById('setup-msg').innerHTML = r.ok ? '<span class="ok">'+r.bots+' bots accepted</span>' : '<span class="bad">validation failed</span>';
+  refresh();
+}
+async function uploadFile(file){
+  const r = await (await fetch('/api/upload',{method:'POST',headers:{'X-Filename':file.name},body:file})).json();
+  alert(r.ok ? 'Uploaded '+r.name+' ('+r.chunks+' chunks)' : r.error);
+  refresh(); refreshTx();
+}
+document.getElementById('file').onchange = e => { if(e.target.files[0]) uploadFile(e.target.files[0]); };
+const drop = document.getElementById('drop');
+drop.ondragover = e => { e.preventDefault(); };
+drop.ondrop = e => { e.preventDefault(); if(e.dataTransfer.files[0]) uploadFile(e.dataTransfer.files[0]); };
+async function doShare(){
+  const ids = [...document.querySelectorAll('.pick:checked')].map(x=>x.value).join(',');
+  const password = document.getElementById('share-pw').value;
+  const r = await (await fetch('/api/share',{method:'POST',headers:{'Content-Type':'application/x-www-form-urlencoded'},body:new URLSearchParams({ids,password})})).json();
+  document.getElementById('share-msg').textContent = r.ok ? (r.warning+' Saved '+r.path) : r.error;
+}
+refresh();
+</script>
+</body>
+</html>

@@ -27,7 +27,7 @@ docs/        short notes, one file per subsystem
 progress/    handoff checkpoints another person can resume from
 ```
 
-The desktop binary is still a bootstrap shell (`TG Cloud Desktop`). Tasks 34–39 are UI *models* (data the future Qt/GTK window will bind to). There is no window toolkit in the tree yet.
+The desktop app is a local web shell (Drive-like sidebar) served by `masavault-desktop` on port 8787. It uses `tgcloud_core` for chunking, Telegram, store, share, and redacted diagnostics.
 
 ## Build and test
 
@@ -35,6 +35,7 @@ The desktop binary is still a bootstrap shell (`TG Cloud Desktop`). Tasks 34–3
 cmake -S . -B /tmp/masavault-build -DCMAKE_BUILD_TYPE=Release
 cmake --build /tmp/masavault-build --parallel 1
 ctest --test-dir /tmp/masavault-build --output-on-failure
+/tmp/masavault-build/desktop/masavault-desktop --port 8787 --www desktop/www
 ```
 
 Needs: CMake 3.16+, C++20, OpenSSL, libcurl.

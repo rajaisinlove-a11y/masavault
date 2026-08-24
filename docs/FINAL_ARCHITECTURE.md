@@ -5,7 +5,7 @@
 **Branch:** `main`  
 **Version:** 0.1.0  
 
-This is a **core-complete, UI-incomplete** Linux rebuild of Android TG Cloud 1.2.0. Telegram Bot API is the object store. The desktop binary is a bootstrap that prints `TG Cloud Desktop`. Widgets must not talk to Telegram.
+This is a **core-complete, UI-incomplete** Linux rebuild of Android TG Cloud 1.2.0. Telegram Bot API is the object store. The desktop binary is a local HTTP shell (`0.0.0.0:8787`) that binds the view-models and `tgcloud_core`. Widgets still must not contain Telegram transport — `Session` is the only boundary.
 
 ## What exists
 

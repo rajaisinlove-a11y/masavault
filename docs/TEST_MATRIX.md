@@ -22,6 +22,10 @@ A row is **PASS** only if an automated test ran.
 | A02 | Real sync-node decrypt | compat (artifact) | same | **NOT RUN** |
 | A03 | Real BKP1 backup decrypt | compat (artifact) | same | **NOT RUN** |
 | A04 | Real 252-chunk DB record parse | compat (artifact) | same | **NOT RUN** |
+| F01 | Encrypted store persists chunks | unit/fix | `encrypted_store_test` | PASS |
+| F02 | Sync gzip compress + raw fallback decrypt | unit/fix | `sync_crypto_test` + `full_backtest` | PASS |
+| F03 | Whole-project live 5-bot + upload + .link + backup | live | `full_backtest` with env | PASS |
+| F04 | Desktop HTTP shell upload + redacted diagnostics | live | local :8787 | PASS |
 
 ## Open compatibility gaps (do not paper over)
 

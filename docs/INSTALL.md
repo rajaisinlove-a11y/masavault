@@ -16,7 +16,13 @@ cmake --install /tmp/masavault-build
 masavault-desktop
 ```
 
-The binary prints `TG Cloud Desktop` and exits 0. That is expected in v0.1.0.
+Run the desktop shell:
+
+```sh
+/tmp/masavault-build/desktop/masavault-desktop --port 8787 --www desktop/www
+```
+
+Open `http://127.0.0.1:8787`. `--name` still prints `TG Cloud Desktop` and exits.
 
 ## Release tarball
 
