@@ -1,0 +1,16 @@
+TASK: 31
+STATUS: COMPLETE
+TITLE: Android/desktop database migration compatibility
+COMMIT: dca30db
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Field-preserving logical CloudFile export/import mapping.
+- Telegram identifiers and metadata retained.
+TESTS:
+- CMake build PASS.
+- CTest PASS (28 tests).
+- Build artifacts deleted.
+COMPATIBILITY:
+- Logical-field migration boundary implemented; SQLCipher byte-level compatibility remains UNKNOWN.
+NEXT:
+Task 32 — gallery/database media layer.
