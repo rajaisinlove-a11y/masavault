@@ -1,0 +1,17 @@
+TASK: 32
+STATUS: COMPLETE
+TITLE: Gallery/database media layer
+COMMIT: 06892bf
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Media catalog with local/remote metadata, dimensions, duration, and sync state.
+- Paginated gallery listing.
+TESTS:
+- CMake build PASS.
+- CTest PASS (29 tests).
+- Build artifacts deleted.
+THUNAR:
+- Core architecture supports a later GVfs/FUSE mount adapter because storage is UI-independent.
+- Not implemented in Task 32; correct integration point is Task 34 desktop file-browser integration.
+NEXT:
+Task 33 — chunk-aware media streaming.
