@@ -1,0 +1,17 @@
+TASK: 13
+STATUS: COMPLETE
+TITLE: Per-chunk bot assignment
+COMMIT: 607e059
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Dynamic chunk assignment through BotPool.
+- Uploader alias persisted on each assigned chunk.
+- Assignment respects unavailable bot capacity.
+TESTS:
+- CMake build PASS.
+- CTest PASS (9 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Assignment does not yet release slots; transfer queue owns lifecycle in Task 14.
+NEXT:
+Task 14 — upload queue/concurrency.
