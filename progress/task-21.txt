@@ -1,0 +1,16 @@
+TASK: 21
+STATUS: COMPLETE
+TITLE: Sync log database
+COMMIT: 4c8dcb1
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Thread-safe append-only sync log store.
+- Pending log enumeration and count.
+TESTS:
+- CMake build PASS.
+- CTest PASS (17 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Durable SQL persistence and uploaded-state transitions remain sync integration work.
+NEXT:
+Task 22 — sync cryptography.
