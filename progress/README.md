@@ -8,7 +8,7 @@ Each finished task has:
 2. a checkpoint commit (`checkpoint: task-NN`)
 3. a test binary (see table)
 
-Status: **01–40 complete.** **41 is next** (packaging + handoff). Live Telegram recheck: `backtest-task-01-38.txt`.
+Status: **01–41 complete** (protocol finished). Product UI is still a bootstrap. Live Telegram recheck: `backtest-task-01-38.txt`.
 
 | Task | Title | Test to run | What that test proves |
 |---:|---|---|---|

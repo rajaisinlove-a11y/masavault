@@ -1,0 +1,12 @@
+{
+  "comment": "Example only. Aliases, never tokens. Copy locally; do not commit a filled-in file.",
+  "storage_channel": "-1000000000000",
+  "sync_channel": "-1000000000001",
+  "device_id": "linux-desktop-1",
+  "sync_enabled": false,
+  "bot_aliases": ["storage-bot-1", "storage-bot-2", "storage-bot-3", "storage-bot-4", "storage-bot-5"],
+  "theme": "system",
+  "max_concurrent_transfers": 3,
+  "diagnostics_enabled": true,
+  "data_directory": "~/.local/share/masavault"
+}

@@ -39,6 +39,16 @@ ctest --test-dir /tmp/masavault-build --output-on-failure
 
 Needs: CMake 3.16+, C++20, OpenSSL, libcurl.
 
+Install, packaging, and a secret-free example config: [`docs/INSTALL.md`](docs/INSTALL.md).  
+Handoff for the next developer: [`docs/FINAL_ARCHITECTURE.md`](docs/FINAL_ARCHITECTURE.md).  
+If something breaks: [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md).
+
+```sh
+cmake --install /tmp/masavault-build
+# or
+sh scripts/package.sh
+```
+
 Do not commit `build/`. Delete it after you verify.
 
 ## Secrets

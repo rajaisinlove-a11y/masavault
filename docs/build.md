@@ -17,3 +17,5 @@ ctest --test-dir build --output-on-failure
 ```
 
 `build/` is generated and must not be committed or retained when workspace pressure matters.
+
+Packaging and prefix install are documented in `docs/INSTALL.md`. The architecture handoff is `docs/FINAL_ARCHITECTURE.md`.
