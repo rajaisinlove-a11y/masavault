@@ -1,0 +1,4 @@
+add_executable(core_smoke_test core_smoke_test.cpp)
+target_link_libraries(core_smoke_test PRIVATE tgcloud_core)
+target_compile_features(core_smoke_test PRIVATE cxx_std_20)
+add_test(NAME core_smoke_test COMMAND core_smoke_test)
