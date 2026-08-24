@@ -8,7 +8,7 @@ Each finished task has:
 2. a checkpoint commit (`checkpoint: task-NN`)
 3. a test binary (see table)
 
-Status: **01–39 complete** (UI tests 35–38 were missing from Git and restored). **40 is next.** Live Telegram recheck: `backtest-task-01-38.txt`.
+Status: **01–40 complete.** **41 is next** (packaging + handoff). Live Telegram recheck: `backtest-task-01-38.txt`.
 
 | Task | Title | Test to run | What that test proves |
 |---:|---|---|---|

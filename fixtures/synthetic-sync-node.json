@@ -1,0 +1,14 @@
+{
+  "id": "node-b",
+  "prevId": "node-a",
+  "timestamp": 1786780783468,
+  "entries": [
+    {
+      "logId": "log-1",
+      "operation": "insert",
+      "table": "cloud_files",
+      "primaryKey": "uuid-1",
+      "data": "{\"name\":\"clip.mp4\",\"size\":5000000}"
+    }
+  ]
+}

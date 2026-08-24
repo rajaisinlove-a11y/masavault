@@ -1,0 +1,25 @@
+{
+  "version": "1",
+  "type": "file",
+  "file_name": "clip.mp4",
+  "file_size": 5000000,
+  "mime_type": "video/mp4",
+  "chunks": [
+    {
+      "chunk_number": 0,
+      "total_chunks": 2,
+      "chunk_size": 4194304,
+      "chunk_hash": "aaa",
+      "telegram_file_id": "file-0",
+      "uploader": "bot-a"
+    },
+    {
+      "chunk_number": 1,
+      "total_chunks": 2,
+      "chunk_size": 805696,
+      "chunk_hash": "bbb",
+      "telegram_file_id": "file-1",
+      "uploader": "bot-b"
+    }
+  ]
+}

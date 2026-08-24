@@ -39,3 +39,7 @@ Status values: **CONFIRMED** = directly supported by forensic evidence; **OBSERV
 ## Compatibility policy
 
 Adapters preserve original names/encodings at boundaries. Internal names may be idiomatic, but no field is dropped without a documented migration rule. A row becomes `COMPATIBLE` only after a fixture or integration test passes; until then it remains `EVIDENCE_ONLY`, `INFERRED`, or `UNKNOWN`. Real credentials and private artifacts never enter production tests.
+
+## Task 40 proof status
+
+See `docs/TEST_MATRIX.md`. Synthetic pipeline / parse / `.link` / sync / backup tests **PASS**. Real Android artifacts from `apkforensic` are **not** vendored, so rows that require those files stay `EVIDENCE_ONLY`. Sync GZIP-before-encrypt is still **unimplemented** (`SYNC1` wraps raw JSON).
