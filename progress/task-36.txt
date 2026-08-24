@@ -1,0 +1,16 @@
+TASK: 36
+STATUS: COMPLETE
+TITLE: Dashboard/sidebar/navigation UI
+COMMIT: 06db518
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Persistent desktop navigation page model.
+- Dashboard statistics model for logical usage, files, transfers, and sync state.
+TESTS:
+- CMake build PASS.
+- CTest PASS (33 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Native widget rendering remains deferred until toolkit selection and UI shell implementation.
+NEXT:
+Task 37 — setup wizard/bot/sync configuration UI.
