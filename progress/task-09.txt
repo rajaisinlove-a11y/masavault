@@ -1,0 +1,17 @@
+TASK: 09
+STATUS: COMPLETE
+TITLE: Telegram authentication/channel validation
+COMMIT: b9780c3
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Bot token validation through getMe response classification.
+- Channel accessibility/permission validation through getChat classification.
+- Explicit valid, invalid-token, inaccessible, and malformed states.
+TESTS:
+- CMake build PASS.
+- CTest PASS (6 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Structured JSON error fields and live channel integration are deferred to API model refinements.
+NEXT:
+Task 10 — direct file upload.
