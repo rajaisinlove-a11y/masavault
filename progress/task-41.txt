@@ -1,0 +1,57 @@
+TASK: 41
+STATUS: COMPLETE
+TITLE: Packaging, documentation, release build and final handoff
+COMMIT: 42b206c
+BRANCH: main
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+VERSION: 0.1.0
+
+BUILD:
+  cmake -S . -B /tmp/masavault-build -DCMAKE_BUILD_TYPE=Release
+  cmake --build /tmp/masavault-build --parallel 1
+
+TEST:
+  ctest --test-dir /tmp/masavault-build --output-on-failure
+  (39/39 PASS)
+
+INSTALL:
+  cmake --install /tmp/masavault-build --prefix /usr/local
+  masavault-desktop
+
+PACKAGE:
+  cmake --build /tmp/masavault-build --target package
+  or: sh scripts/package.sh
+  artifact: masavault-0.1.0-Linux.tar.gz
+
+IMPLEMENTED:
+- install() for binary + docs
+- CPack TGZ
+- docs/FINAL_ARCHITECTURE.md (next-agent handoff)
+- docs/INSTALL.md, TROUBLESHOOTING.md, example-config.json
+- LICENSE (MIT)
+
+COMPATIBILITY:
+- Synthetic matrix PASS (Task 40).
+- Real Android artifacts NOT RUN.
+- Sync GZIP still unimplemented.
+
+KNOWN LIMITATIONS:
+- No Qt/GTK window. Binary prints "TG Cloud Desktop".
+- No libsecret. Tokens must not enter SettingsModel.
+- No FUSE/Thunar. No multi-GB soak in CI.
+
+UNKNOWNS:
+- Telegram caption / [CHUNK] wire text
+- SQLCipher Android DB bytes
+- Exact .link credential field layout from the 305-file artifact
+
+DOCS:
+- Architecture: docs/architecture.md + docs/FINAL_ARCHITECTURE.md
+- Compatibility: docs/COMPATIBILITY_MATRIX.md + docs/TEST_MATRIX.md
+- Progress map: progress/README.md
+
+NEXT (after the 41-task protocol):
+Paint the desktop with Qt 6 or GTK4 bound to desktop/ui models.
+Do not start a new 01–41 cycle.
+
+WORKSPACE: source ~1.6 MB. Build stays in /tmp.
