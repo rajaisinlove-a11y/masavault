@@ -1,0 +1,16 @@
+TASK: 12
+STATUS: COMPLETE
+TITLE: Chunk manifest and metadata mapping
+COMMIT: 95fbe16
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- FileManifest mapping of logical files and explicit chunks.
+- Deterministic JSON serialization preserving chunk and Telegram metadata.
+TESTS:
+- CMake build PASS.
+- CTest PASS (8 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Exact Android manifest field ordering and decryption compatibility remain fixture-gated.
+NEXT:
+Task 13 — per-chunk bot assignment.
