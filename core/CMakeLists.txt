@@ -1,4 +1,4 @@
-add_library(tgcloud_core STATIC src/core.cpp src/memory_store.cpp src/encrypted_store.cpp src/bot_pool.cpp src/bot_client.cpp src/validator.cpp src/chunker.cpp src/manifest.cpp src/assignment.cpp src/queue.cpp src/reconstruct.cpp src/control.cpp src/progress.cpp src/policy.cpp src/cloud_files.cpp src/log_store.cpp src/sync_crypto.cpp src/node.cpp)
+add_library(tgcloud_core STATIC src/core.cpp src/memory_store.cpp src/encrypted_store.cpp src/bot_pool.cpp src/bot_client.cpp src/validator.cpp src/chunker.cpp src/manifest.cpp src/assignment.cpp src/queue.cpp src/reconstruct.cpp src/control.cpp src/progress.cpp src/policy.cpp src/cloud_files.cpp src/log_store.cpp src/sync_crypto.cpp src/node.cpp src/chain.cpp)
 target_include_directories(tgcloud_core PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include)
 target_compile_features(tgcloud_core PUBLIC cxx_std_20)
 find_package(OpenSSL REQUIRED)
