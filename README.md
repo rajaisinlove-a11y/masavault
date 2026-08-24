@@ -13,6 +13,7 @@ Telegram Bot API is the storage backend. This is **not** a generic Telegram Driv
 | What a piece of code is supposed to do | the matching test in `tests/unit/` |
 | Architecture / evidence labels | [`docs/architecture.md`](docs/architecture.md) |
 | Compatibility claims | [`docs/COMPATIBILITY_MATRIX.md`](docs/COMPATIBILITY_MATRIX.md) |
+| What is actually tested | [`docs/TEST_MATRIX.md`](docs/TEST_MATRIX.md) |
 
 **Rule:** a feature is only “compatible” if a test passed. `CONFIRMED` / `OBSERVED` / `INFERRED` / `UNKNOWN` in the docs are not marketing words.
 
