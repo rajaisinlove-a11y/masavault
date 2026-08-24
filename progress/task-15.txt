@@ -1,0 +1,17 @@
+TASK: 15
+STATUS: COMPLETE
+TITLE: Download engine
+COMMIT: ce899c3
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Telegram getFile operation.
+- Disk-streamed URL download with timeout and HTTP status capture.
+- UI-independent Downloader wrapper.
+TESTS:
+- CMake build PASS.
+- CTest PASS (11 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Telegram file-path JSON extraction and chunk reconstruction are Tasks 16 and later.
+NEXT:
+Task 16 — chunked download reconstruction.
