@@ -1,0 +1,16 @@
+TASK: 29
+STATUS: COMPLETE
+TITLE: .link import/download
+COMMIT: b26972a
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Disk .link import and decryption.
+- Manifest JSON handoff for validation/download orchestration.
+TESTS:
+- CMake build PASS.
+- CTest PASS (26 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Manifest schema parsing and Telegram object download integration remain to be wired.
+NEXT:
+Task 30 — compatible backup import/export.
