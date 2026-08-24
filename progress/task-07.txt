@@ -1,0 +1,17 @@
+TASK: 07
+STATUS: COMPLETE
+TITLE: Multi-bot pool and scheduler
+COMMIT: 02f28ba
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Thread-safe BotPool with dynamic round-robin assignment.
+- Enabled/disabled bot handling, active counts, assignment and failure statistics.
+- Scheduler documentation and unit test.
+TESTS:
+- CMake build PASS.
+- CTest PASS (5 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- HTTP rate limits, Retry-After, health probing and throughput measurement are deferred to Tasks 08 and 19.
+NEXT:
+Task 08 — Telegram Bot API client.
