@@ -1,0 +1,17 @@
+TASK: 20
+STATUS: COMPLETE
+TITLE: cloud_files compatibility layer
+COMMIT: df69547
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- CloudFiles adapter over Store.
+- Logical UUID upsert and Telegram file-ID lookup.
+- Compatibility documentation and unit coverage.
+TESTS:
+- CMake build PASS.
+- CTest PASS (16 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Full Android SQL schema and migration mapping remain later tasks; UUID semantics are evidence-backed but not fully proven.
+NEXT:
+Task 21 — sync log database.
