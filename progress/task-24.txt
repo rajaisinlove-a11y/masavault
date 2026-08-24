@@ -1,0 +1,15 @@
+TASK: 24
+STATUS: COMPLETE
+TITLE: Sync-chain traversal
+COMMIT: b39eb00
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- ID-indexed prevId traversal.
+- Oldest-first chain ordering.
+- Broken-link and cycle detection.
+TESTS:
+- CMake build PASS.
+- CTest PASS (20 tests).
+- Build artifacts deleted.
+NEXT:
+Task 25 — conflict detection and merge.
