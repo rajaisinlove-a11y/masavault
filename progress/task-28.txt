@@ -1,0 +1,17 @@
+TASK: 28
+STATUS: COMPLETE
+TITLE: Single-file and batch .link generation
+COMMIT: 7f191ca
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- Encrypted single-file .link generation.
+- Encrypted batch manifest generation.
+- Disk output and generation test.
+TESTS:
+- CMake build PASS.
+- CTest PASS (25 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Android exact batch schema and real-artifact interoperability remain fixture-gated.
+NEXT:
+Task 29 — .link import/download.
