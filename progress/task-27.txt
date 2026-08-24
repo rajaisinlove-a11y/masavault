@@ -1,0 +1,18 @@
+TASK: 27
+STATUS: COMPLETE
+TITLE: Compatible .link encryption/decryption
+COMMIT: 6929457
+REPOSITORY: https://github.com/rajaisinlove-a11y/masavault
+IMPLEMENTED:
+- PBKDF2-HMAC-SHA256 10,000 derivation.
+- AES-256-CBC with random 16-byte salt and IV.
+- Salt + IV + ciphertext binary layout.
+- PKCS#7-compatible padding and wrong-password rejection.
+TESTS:
+- CMake build PASS.
+- CTest PASS (24 tests).
+- Build artifacts deleted.
+KNOWN PROBLEMS:
+- Android plaintext manifest field compatibility remains fixture-gated.
+NEXT:
+Task 28 — single-file and batch .link generation.
